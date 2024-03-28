@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Section with Image, Category, and Delete Button</title>
+    <style>
+        .section {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .image-container {
+            flex: 0 0 auto;
+            margin-right: 10px;
+        }
+
+        .image-container img {
+            width: 50px; /* Adjust the size as needed */
+            height: auto;
+            border-radius: 50%; /* Make the image rounded */
+        }
+
+        .category {
+            flex: 1;
+            font-weight: bold;
+            margin-left: 30%;
+
+        }
+
+        .delete-button {
+            flex: 0 0 auto;
+            background-color: #FF004D; /* Coral color */
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+        .alert {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="alert alert-success" role="alert" id="alert"> 
+      </div>
+    
+    <% images.forEach(image => {%> 
+<div class="section">
+    
+
+            <div class="image-container">
+                <img src="<%=image.data%>" alt="<%=image.name%>" loading="lazy">
+            </div>
+            <div class="category"><%= image.name %></div>
+            <button class="delete-button" value="<%=image.name%>" id="delete-button">Delete</button>  
+</div>
+<%}) %>
+
+<script>
+    let deleteButton = document.getElementById("delete-button");
+    let alertContent = document.getElementById("alert");
+    alertContent.textContent = ''
+
+    deleteButton.addEventListener('click', () => {
+        alertContent.style.visibility = 'visible';
+        alertContent.textContent = `${deleteButton.value} deleted`;
+        console.log(deleteButton.value)
+
+    });
+
+
+</script>
+
+</body>
+</html>

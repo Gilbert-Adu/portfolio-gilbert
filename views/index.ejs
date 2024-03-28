@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <style>
+        .hero-text {
+            text-align: center;
+            margin: 5% auto;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <%- include('./partials/navbar')%> <br>
+    <div class="hero-text">
+        <span>Built using NodeJS backend and MongoDB database</span><br>
+        <span>I know Python and PHP too 😊 </span><br>
+        <span>
+            <a href="http://localhost:3000/contact"><button  style="margin-top: 5%; background-color: #A0153E; border-color: #A0153E;" class="btn btn-secondary btn-sm">Contact Me</button>
+            </a>
+            <a href="http://localhost:3000/admin/dashboard"><button  style="margin-top: 5%;" class="btn btn-outline-success btn-sm">More Projects</button></a>
+        </span>
+            <br>
+        <span style="font-size: 10px;margin-bottom: 10%;">Join the fun. ❤️</span>
+    </div>
+    <%- include('./partials/gallery')%> <br>
+    <%- include('./partials/footer')%> <br>
+
+
+
+</body>
+</html>
